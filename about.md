@@ -7,7 +7,7 @@ I am a Python Web Developer, Golang noob and I know some Javascript which I am n
 
 ### More Information
 
-Other than programming I like gaming ,travelling and youtube :)
+Other than programming I like gaming, travelling and youtube :).
 
 ### Contact me
 
