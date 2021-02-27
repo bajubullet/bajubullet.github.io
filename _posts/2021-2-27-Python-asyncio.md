@@ -103,5 +103,20 @@ Here `asyncio.create_task` actually spawns the task on the event loop and the `a
 We can actually skip awaiting for `t1` here since it will complete before `t2` as it only runs for 1 sec, but its always a good idea to wait for all the tasks 
 you spawn.
 
+The main function in above code can also be summarized using the `asyncio.gather` function like this:
+```python
+async def main():
+    await asyncio.gather(
+        say_hello_after(2),
+        say_hello_after(1),
+    )
+```
+
+Here the gather function takes awaitables as arguments which can either be a
+- coroutine (returned object on calling `async def` function)
+- task (returned on calling `asyncio.create_task`)
+- future (usually provided by frameworks and APIs)
+
+
 More details on this can be found here: [Documentation](https://docs.python.org/3/library/asyncio.html)
 
