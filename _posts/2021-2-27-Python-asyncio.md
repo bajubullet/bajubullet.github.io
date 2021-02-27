@@ -1,5 +1,3 @@
-# Intro to python [asyncio](https://docs.python.org/3/library/asyncio.html)
-
 The new asyncio framework introduced in python3 is amazing. It allows us to run tasks concurrently in python similar to Golang and other languages that support
 concurrency.
 
@@ -104,3 +102,6 @@ finished at: 21:11:57
 Here `asyncio.create_task` actually spawns the task on the event loop and the `await` calls in the `main()` function actually wait for it to complete.
 We can actually skip awaiting for `t1` here since it will complete before `t2` as it only runs for 1 sec, but its always a good idea to wait for all the tasks 
 you spawn.
+
+More details on this can be found here: https://docs.python.org/3/library/asyncio.html
+
