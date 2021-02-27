@@ -4,7 +4,7 @@ concurrency.
 It still doesn't by-pass GIL but can allow you to do concurrent network operations which usually solves most of the problems.
 
 To do this you need to create coroutines instead of functions which you can do by simply adding `async` before `def`ing a function like this:
-```python3
+```python
 async def say_hello():
   print("Hello World!")
 ```
@@ -32,7 +32,7 @@ Hello World!
 Ok now we know how to create and execute coroutines great, right? not so fast `asyncio.run` simply executes a coroutine it doesn't actually allow concurrency.
 Let me explain, if we modify our `say_hello` function to `say_hello_after(n)` which waits for `n` secs before printing anything.
 
-```python3
+```python
 import asyncio
 import time
 
@@ -69,7 +69,7 @@ The program is still taking 3 secs to complete, which is not good, no concurrenc
 We need to make one final adjustment we need to spawn the tasks in the event loop. which we can do by wrapping the coroutine calls in `asyncio.create_task` function
 which actually spawns the task on the event loop and gives you a task object that can be awaited. Here is the final code:
 
-```python3
+```python
 import asyncio
 import time
 
