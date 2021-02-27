@@ -103,5 +103,5 @@ Here `asyncio.create_task` actually spawns the task on the event loop and the `a
 We can actually skip awaiting for `t1` here since it will complete before `t2` as it only runs for 1 sec, but its always a good idea to wait for all the tasks 
 you spawn.
 
-More details on this can be found here: https://docs.python.org/3/library/asyncio.html
+More details on this can be found here: [Documentation](https://docs.python.org/3/library/asyncio.html)
 
